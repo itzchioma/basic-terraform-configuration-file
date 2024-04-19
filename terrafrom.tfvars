@@ -1,0 +1,7 @@
+# region       = "us-east-1"
+# project_name = "dev"
+# vpc_cidr     = "10.0.0.0/16"
+# web-subnet   = "10.0.1.0/16"
+# app-subnet   = "10.0.2.0/16"
+# ami          = "ami-080e1f13689e07408"
+# instance     = "t2.micro"
