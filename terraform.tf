@@ -1,3 +1,4 @@
+# Terraform block configuration
 terraform {
   required_providers {
     aws = {

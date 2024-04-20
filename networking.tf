@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    name = "internet_gateway"
+    name = "${var.project_name}-internet_gateway"
   }
 
 }
@@ -31,7 +31,7 @@ resource "aws_route_table" "public_route_table" {
   }
 
   tags = {
-    Name = "public_route_table"
+    Name = "${var.project_name}-public_route_table"
   }
 
 }
@@ -48,7 +48,7 @@ resource "aws_subnet" "web-subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "web-subnet"
+    Name = "${var.project_name}-web-subnet"
   }
 }
 
@@ -66,7 +66,7 @@ resource "aws_subnet" "app-subnet" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "app-subnet"
+    Name = "${var.project_name}-app-subnet"
   }
 }
 
@@ -76,7 +76,7 @@ resource "aws_subnet" "nat-subnet" {
   cidr_block        = var.nat-subnet
   availability_zone = data.aws_availability_zones.available_zones.names[2]
   tags = {
-    Name = "Public Subnet for NAT Gateway"
+    Name = "${var.project_name}-nat-subnet"
   }
 }
 
